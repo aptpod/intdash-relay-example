@@ -56,8 +56,7 @@ Raspberry Pi では、Sense HAT からデータを取得し MQTT で送信する
 ### 前提条件
 
 * Sense HAT が動作する Raspberry Pi
-* Python (>=3.13.0)
-* uv (Python パッケージインストーラー)
+* Python
 
 ### セットアップ手順
 
@@ -71,11 +70,11 @@ Raspberry Pi では、Sense HAT からデータを取得し MQTT で送信する
 1. **Python の依存関係をインストールします。**
 
     ```bash
-    uv pip install -r requirements.txt
-    # または pyproject.toml を使用する場合
-    # uv pip install .
-    ```
-    (注: `requirements.txt` がない場合は、`pyproject.toml` から生成するか、`uv pip install .` を使用してください。)
+    sudo apt-get update
+    sudo apt-get install sense-hat
+    sudo reboot
+
+    pip install paho-mqtt
 
 1. **`main.py` の MQTTブローカーアドレスを編集します。**
 
@@ -92,10 +91,8 @@ Raspberry Pi では、Sense HAT からデータを取得し MQTT で送信する
     Raspberry Pi 上でターミナルを開き、クローンしたリポジトリのディレクトリに移動して、以下のコマンドを実行して `main.py` を起動します。
 
     ```bash
-    uv run main.py
+    python main.py
     ```
-
-    (注: `uv pip install .` などで依存関係がプロジェクトのPython環境にインストールされていれば `python main.py` でも実行可能です。)
 
     スクリプトは Sense HAT から加速度データを取得し、ローカル環境で動作している MQTTブローカーに送信します。
     ローカル環境の `relayd` は MQTTブローカーからデータを受信し、intdash へ転送します。
