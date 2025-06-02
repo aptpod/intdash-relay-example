@@ -1,0 +1,23 @@
+services:
+  relay:
+    container_name: relay
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./relayd.conf:/etc/relayd/relayd.conf:ro
+    networks:
+      - relay-net
+  mqtt:
+    container_name: mqtt
+    ports:
+      - "1883:1883"
+    image: eclipse-mosquitto:2.0.21
+    volumes:
+      - ./docker/mosquitto/config:/mosquitto/config:ro
+    networks:
+      - relay-net
+networks:
+  relay-net:
+    name: relay-net
+    driver: bridge

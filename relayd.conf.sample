@@ -1,0 +1,22 @@
+[intdash]
+  url = 'https://intdash.example.com'              # <--- TODO: 変更する
+
+[mqtt]
+  address = 'mqtt://mqtt:1883'
+
+[[mqtt_to_intdash]]
+  id = 1
+  edge_setting_id = 1
+  from_topic = 'sensors/acceleration'
+
+# 本サンプルでは使用しない。
+# [[intdash_to_mqtt]]
+#   id = 1
+#   edge_setting_id = 1
+#   from_edge_uuid = '00000000-0000-0000-0000-000000000000'
+
+[[edge_settings]]
+  id = 1
+  edge_uuid = '00000000-0000-0000-0000-000000000000'        # <---- TODO: 変更する
+  edge_secret = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' # <---- TODO: 変更する
+  project_uuid = '00000000-0000-0000-0000-000000000000'     # <---- TODO: 必要に応じて変更する

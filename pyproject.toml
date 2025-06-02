@@ -1,0 +1,10 @@
+[project]
+name = "intdash-relay-example"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13.0"
+dependencies = [
+    "paho-mqtt>=2.1.0",
+    "sense-hat>=2.6.0",
+]
