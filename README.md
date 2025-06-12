@@ -31,7 +31,8 @@ intdash-relay と MQTT を使用してセンサーデータを intdash へ送信
 
     ここで設定する `edge_uuid` や `edge_secret` は、intdashにおける「エッジ」の情報を指します。
     エッジとは、IoT (Internet of Things) における「モノ」に該当し、通常はデータを送信するデバイス（このサンプルではRaspberry Pi）がこれにあたります。
-    エッジの作成や管理方法の詳細については、intdashのドキュメントを参照してください。
+    エッジの作成や管理方法の詳細については、ご契約時やトライアルの際に提供されるintdashのドキュメントを参照してください。
+
 
     ```bash
     cp relayd.conf.sample relayd.conf
